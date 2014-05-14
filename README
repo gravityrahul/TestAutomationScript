@@ -1,0 +1,63 @@
+========================================
+# README
+========================================
+
+Time to Plan the entire FrameWork: 2.5 hours
+Time to Code Test Stubs:  5 mins for each Test Step
+Time to Code libraries, JSON Loader, cmdLaunch, ThreadLaunch:  3 hours
+Time to contruct memory mapper to plot: 2.5 hours
+This part really took a long time to implement and get it working nicely. Even then, 
+I feel I am not handling the process1 gracefully. 
+
+Time to code plotting routine: 5 mins
+
+--------------
+
+This is how I thought:
+
+	(i) A directory structure should be maintained to place the codes of interest
+	(ii) All test codes, test_definition file should be in integration folder
+	(iii) All modules should be in lib directory
+	(iv) Master script should reside in main folder in this case QATEST
+
+
+
+	(a) A single master scripts should call all other scripts
+	(b) A test Step may be a single command to be run or list of several commands (in case of tasks)
+	(c) The starting time, ending time should be handled by the code that launches the commands.
+	(d) The code can be either launched by cmdLaunch.py or threadLaunch.py depending on step or tasks. 
+	(e) A single filehandler should be propagated to capture the output.
+	(f) Also, valuable output should be printed into stdout
+	(g) A test definition files should exist, to place testing environment.
+	(h) The various outout files, psBefore, psAfter summary should all have time stamps.
+
+
+The Output of an Example Run is Included
+
+1) tar -zcvf qatest.tgz
+2) cd QATEST/integration
+3) The following files are present
+
+	psAfter.txt-<Time Stamp>
+	psBefore.txt-<Time Stamp>
+	summary.txt-<Time Stamp> 	
+4) cd QATEST/
+Following files are present
+	memory_performance.png (plot of free memory)
+	output.txt ( An example of actual run output)	
+
+To Test:
+
+cp qatest.tgz /tmp/
+tar -zxvf qatest.tgz
+cd QATEST/
+python RunTest.py
+After the run finishes you should find the plot and output printed to output
+cd integration/
+You will find the psBefore, psAfter and summary.txt
+
+============ THANK YOU ==============
+
+
+
+

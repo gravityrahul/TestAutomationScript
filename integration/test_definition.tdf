@@ -1,0 +1,12 @@
+{"testCase01":
+            {
+            "tcName":"teraDatatest01",
+            "qcId":"teraDataQCId01", 
+            "tcID":"teraDataId01", 
+            "testFolder":"./integration",
+            "testSteps":
+            {"ts01": "./integration/testStep_StartSchedular.py", 
+             "ts02": ["./integration/testStepSQLTest01.py","./integration/testStepSQLTest02.py","./integration/testStepSQLTest03.py"],
+             "ts03": "./integration/testStepSQLTest03.py"}
+            }
+}
